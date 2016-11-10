@@ -1,327 +1,323 @@
 :- style_check(-singleton).
 better('SWI-Prolog', AnyOtherProlog?).
 
-goal_state([1,2,3,
-	    4,b,5,
-	    6,7,8]).
+goal_state([1,2,3,4,0,5,6,7,8]).
 
-move(left,right,up,down).
-
-apply_move([A,b,C,
+apply_move([A,0,C,
             D,E,F,
 			G,H,I],
 			left,
-			[b,A,C,
+			[0,A,C,
 			D,E,F,
 			G,H,I]).
 
-apply_move([A,C,b,
+apply_move([A,C,0,
 			D,E,F,
 			G,H,I],
 			left,
-			[A,b,C,
+			[A,0,C,
 			D,E,F,
 			G,H,I]).
 
 apply_move([A,C,D,
-			E,b,F,
+			E,0,F,
 			G,H,I],
 			left,
 			[A,C,D,
-			b,E,F,
+			0,E,F,
 			G,H,I]).
 
 apply_move([A,C,D,
-			E,F,b,
+			E,F,0,
 			G,H,I],
 			left,
 			[A,C,D,
-			E,b,F,
+			E,0,F,
 			G,H,I]).
 
 apply_move([A,C,D,
 			E,F,G,
-			H,b,I],
+			H,0,I],
 			left,
 			[A,C,D,
 			E,F,G,
-			b,H,I]).
+			0,H,I]).
 
 apply_move([A,C,D,
 			E,F,G,
-			H,I,b],
+			H,I,0],
 			left,
 			[A,C,D,
 			E,F,G,
-			H,b,I]).
+			H,0,I]).
 
-apply_move([b,A,C,
+apply_move([0,A,C,
 			D,E,F,
 			G,H,I],
 			right,
-			[A,b,C,
+			[A,0,C,
 			D,E,F,
 			G,H,I]).
 
-apply_move([A,b,C,
+apply_move([A,0,C,
 			D,E,F,
 			G,H,I],
 			right,
-			[A,C,b,
+			[A,C,0,
 			D,E,F,
-			G,H,I]).
-
-apply_move([A,C,D,
-			b,E,F,
-			G,H,I],
-			right,
-			[A,C,D,
-			E,b,F,
 			G,H,I]).
 
 apply_move([A,C,D,
-			E,b,F,
+			0,E,F,
 			G,H,I],
 			right,
 			[A,C,D,
-			E,F,b,
+			E,0,F,
+			G,H,I]).
+
+apply_move([A,C,D,
+			E,0,F,
+			G,H,I],
+			right,
+			[A,C,D,
+			E,F,0,
 			G,H,I]).
 
 apply_move([A,C,D,
 			E,F,G,
-			b,H,I],
+			0,H,I],
 			right,
 			[A,C,D,
 			E,F,G,
-			H,b,I]).
+			H,0,I]).
 
 apply_move([A,C,D,
 			E,F,G,
-			H,b,I],
+			H,0,I],
 			right,
 			[A,C,D,
 			E,F,G,
-			H,I,b]).
+			H,I,0]).
 
 apply_move([A,C,D,
-			b,E,F,
+			0,E,F,
 			G,H,I],
 			up,
-			[b,C,D,
+			[0,C,D,
 			A,E,F,
 			G,H,I]).
 
 apply_move([A,C,D,
-			E,b,F,
+			E,0,F,
 			G,H,I],
 			up,
-			[A,b,D,
+			[A,0,D,
 			E,C,F,
 			G,H,I]).
 
 apply_move([A,C,D,
-			E,F,b,
+			E,F,0,
 			G,H,I],
 			up,
-			[A,C,b,
+			[A,C,0,
 			E,F,D,
 			G,H,I]).
 
 apply_move([A,C,D,
 			E,F,G,
-			b,H,I],
+			0,H,I],
 			up,
 			[A,C,D,
-			b,F,G,
+			0,F,G,
 			E,H,I]).
 
 apply_move([A,C,D,
 			E,F,G,
-			H,b,I],
+			H,0,I],
 			up,
 			[A,C,D,
-			E,b,G,
+			E,0,G,
 			H,F,I]).
 
 apply_move([A,C,D,
 			E,F,G,
-			H,I,b],
+			H,I,0],
 			up,
 			[A,C,D,
-			E,F,b,
+			E,F,0,
 			H,I,G]).
 
-apply_move([b,A,C,
+apply_move([0,A,C,
 			D,E,F,
 			G,H,I],
 			down,
 			[D,A,C,
-			b,E,F,
+			0,E,F,
 			G,H,I]).
 
-apply_move([A,b,C,
+apply_move([A,0,C,
 			D,E,F,
 			G,H,I],
 			down,
 			[A,E,C,
-			D,b,F,
+			D,0,F,
 			G,H,I]).
 
-apply_move([A,C,b,
+apply_move([A,C,0,
 			D,E,F,
 			G,H,I],
 			down,
 			[A,C,F,
-			D,E,b,
+			D,E,0,
 			G,H,I]).
 
 apply_move([A,C,D,
-			b,E,F,
+			0,E,F,
 			G,H,I],
 			down,
 			[A,C,D,
 			G,E,F,
-			b,H,I]).
+			0,H,I]).
 
 apply_move([A,C,D,
-			E,b,F,
+			E,0,F,
 			G,H,I],
 			down,
 			[A,C,D,
 			E,H,F,
-			G,b,I]).
+			G,0,I]).
 
 apply_move([A,C,D,
-			E,F,b,
+			E,F,0,
 			G,H,I],
 			down,
 			[A,C,D,
 			E,F,I,
-			G,H,b]).
+			G,H,0]).
 
 			
-find_move([b,A,C,
+find_move([0,A,C,
 		   D,E,F,
 		   G,H,I],
 		   right).
 
-find_move([b,A,C,
+find_move([0,A,C,
 		   D,E,F,
 		   G,H,I],
 		   down).
 		   
-find_move([A,b,C,
+find_move([A,0,C,
 		   D,E,F,
 		   G,H,I],
 		   right).
 
-find_move([A,b,C,
+find_move([A,0,C,
 		   D,E,F,
 		   G,H,I],
 		   left).
 		   
-find_move([A,b,C,
+find_move([A,0,C,
 		   D,E,F,
 		   G,H,I],
 		   down).
 		   
-find_move([A,C,b
+find_move([A,C,0,
 		   D,E,F,
 		   G,H,I],
 		   left).
 		   
-find_move([A,C,b
+find_move([A,C,0,
 		   D,E,F,
 		   G,H,I],
 		   down).
 		   
-find_move([A,C,D
-		   b,E,F,
+find_move([A,C,D,
+		   0,E,F,
 		   G,H,I],
 		   up).
 		   
-find_move([A,C,D
-		   b,E,F,
+find_move([A,C,D,
+		   0,E,F,
 		   G,H,I],
 		   right).	
 		   
-find_move([A,C,D
-		   b,E,F,
+find_move([A,C,D,
+		   0,E,F,
 		   G,H,I],
 		   down).
 		   
-find_move([A,C,D
-		   E,b,F,
+find_move([A,C,D,
+		   E,0,F,
 		   G,H,I],
 		   up).
 
-find_move([A,C,D
-		   E,b,F,
+find_move([A,C,D,
+		   E,0,F,
 		   G,H,I],
 		   left).
 
-find_move([A,C,D
-		   E,b,F,
+find_move([A,C,D,
+		   E,0,F,
 		   G,H,I],
 		   right).
 
-find_move([A,C,D
-		   E,b,F,
+find_move([A,C,D,
+		   E,0,F,
 		   G,H,I],
 		   down).
 
-find_move([A,C,D
-		   E,F,b,
+find_move([A,C,D,
+		   E,F,0,
 		   G,H,I],
 		   up).
 
-find_move([A,C,D
-		   E,F,b,
+find_move([A,C,D,
+		   E,F,0,
 		   G,H,I],
 		   left).
 		   
-find_move([A,C,D
-		   E,F,b,
+find_move([A,C,D,
+		   E,F,0,
 		   G,H,I],
 		   down).
 		   
-find_move([A,C,D
+find_move([A,C,D,
 		   E,F,G,
-		   b,H,I],
+		   0,H,I],
 		   right).
 		   
-find_move([A,C,D
+find_move([A,C,D,
 		   E,F,G,
-		   b,H,I],
+		   0,H,I],
 		   up).
 		   
-find_move([A,C,D
+find_move([A,C,D,
 		   E,F,G,
-		   H,b,I],
+		   H,0,I],
 		   up).
 		   
-find_move([A,C,D
+find_move([A,C,D,
 		   E,F,G,
-		   H,b,I],
+		   H,0,I],
 		   right).
 		   
-find_move([A,C,D
+find_move([A,C,D,
 		   E,F,G,
-		   H,b,I],
+		   H,0,I],
 		   left).
 		   
-find_move([A,C,D
+find_move([A,C,D,
 		   E,F,G,
-		   H,I,b],
+		   H,I,0],
 		   right).
 
-find_move([A,C,D
+find_move([A,C,D,
 		   E,F,G,
-		   H,I,b],
+		   H,I,0],
 		   up).
 
 new_state(S,P) :-
- not(member(S,P))
+ not(member(S,P)).
 			
 			
 			
@@ -339,11 +335,3 @@ acceptable_move(State, PreviousStates, Move, NewState) :-
  find_move(State, Move),
  apply_move(State, Move, NewState),
  new_state(NewState, PreviousStates).
-
-
-
-
-
-
-
-
