@@ -31,7 +31,7 @@
 
 % States must be represebted as a 
 % list of 9 digits(containing all the 
-% digits from 0 to 9) with 0 representing
+% digits from 0 to 8) with 0 representing
 % the blank space 
 % NOTE: It is possible for a state to be unsolvable.
 % This will cause the program to run until it has 
